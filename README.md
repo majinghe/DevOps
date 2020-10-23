@@ -121,6 +121,9 @@ DevOps一定是要能够度量的，比如部署的频率，故障的修复速�
 
 Kubernetes简称K8S(除去开头的K和结尾的S，中间正好有八个字符，故号称K8S)是谷歌开源的一个全新的基于容器技术的分布式架构方案，同时也是一个全新的容器编排工具。Kubernetes的前身是谷歌的Borg系统，始于2003年，它是在谷歌内部使用的一个容器管理系统，它管理着来自数千个不同应用程序的数十万个作业，跨越许多集群，而每个集群拥有多达数万台计算机。2013年，另外一个Omega系统在谷歌内部应用，Omega可以看作是Borg的延伸，在大规模集群管理以及性能方面优于Borg。但是Borg和Omega都是谷歌内部使用的系统，也就是所谓的闭源系统。直到2014年，谷歌以开源的形式推出了Kubernetes系统，同年6月7号在github上完成了第一次提交，随后的7月10号，微软，IBM，Redhat，Docker加入了Kubernetes社区。在2015年7月Kubernetes正式发布了v1.0版本，直到今年6月19号发布了v1.15版本，而且1.16版本正在紧张开发之中。可以看出短短四年已经发布了十六个版本，而且速度越来越快。其实在容器编排领域除了有Kubernetes，还有Docker Swarm和Mesos，在初期，这三者呈三足鼎立之势，但是现在Kubernetes却一枝独秀，Kubernetes已经发展成为一个Kubernetes生态圈，而且以Kubernetes为核心发展起来的的CloudNative的发展势头也很迅猛。
 
+## Kubernetes 架构
+
+![](https://github.com/lhb008/DevOps/blob/main/images/k8s-arch.png)
 
 # 第三部分： 基于Kubernetes的DevOps 工具链
 
