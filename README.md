@@ -2,6 +2,8 @@
 
 ## 诞生
 
+![](https://github.com/lhb008/DevOps/blob/main/images/timeline.png)
+
 ### 2007 年
 
 比利时IT工程师Patrick Debois在给政府的一个数据中心做迁移的过程中，深刻的感受到了存在于开发人员和运维人员之间的一道壁垒：开发人员关心的是自己的代码，想要将代码快速推送到代码仓库，进而快速部署到生产环境上；而运维人员关心系统的稳定性，从而不能频繁、快速的将业务变更部署到生产环境上。速度与稳定就会导致矛盾的产生，由此，他就在想有没有一种方式来解决这种矛盾，打破横亘在开发和运维之间的这种壁垒呢
@@ -74,9 +76,6 @@ DevOps一定是要能够度量的，比如部署的频率，故障的修复速�
 持续交付和持续部署看起来都是将变更及时部署到生产环境中，但是他们是有差别的，持续交付通常被认为是持续集成的更进一步，它意味着可以将变更进行部署，而且部署的流程是自动化的，只要点击一个按钮，就能将变更部署到生产环境上。持续部署又是持续交付的更进一步，它意味着变更的部署没有任何的人为干预，全自动部署。另外，Jez Humble在 《持续交付》一书中提到，持续交付可以适用于任何软件开发项目，包括物联网和嵌入式项目，但是持续部署则特定于Web软件。
 
 
-
-
-
 ## Blue/Green deployment(蓝绿部署)
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/blue-green.jpg)
@@ -86,3 +85,43 @@ DevOps一定是要能够度量的，比如部署的频率，故障的修复速�
 
 ## Canary deployment（灰度发布）
 ![](https://github.com/lhb008/DevOps/blob/main/images/canary.jpg)
+
+
+# 第二部分： Docker 和 Kubernetes
+
+## Docker
+
+### 概念
+
+一种虚拟化技术，将应用程序运行时环境进行打包封装，以达到 **build once, running anywhere**。
+
+### 架构
+
+![](https://github.com/lhb008/DevOps/blob/main/images/docker-arch.png)
+
+### 核心概念
+
+* 镜像仓库
+* Dockerfile
+* 镜像
+* 容器
+
+### Dockerfile 镜像 容器 关系
+
+![](https://github.com/lhb008/DevOps/blob/main/images/dockerfile.png)
+
+
+### docker 基本使用
+
+![](https://github.com/lhb008/DevOps/blob/main/images/docker1.png)
+
+## Kubernetes 演进史
+
+![](https://github.com/lhb008/DevOps/blob/main/images/k8s_history.png)
+
+Kubernetes简称K8S(除去开头的K和结尾的S，中间正好有八个字符，故号称K8S)是谷歌开源的一个全新的基于容器技术的分布式架构方案，同时也是一个全新的容器编排工具。Kubernetes的前身是谷歌的Borg系统，始于2003年，它是在谷歌内部使用的一个容器管理系统，它管理着来自数千个不同应用程序的数十万个作业，跨越许多集群，而每个集群拥有多达数万台计算机。2013年，另外一个Omega系统在谷歌内部应用，Omega可以看作是Borg的延伸，在大规模集群管理以及性能方面优于Borg。但是Borg和Omega都是谷歌内部使用的系统，也就是所谓的闭源系统。直到2014年，谷歌以开源的形式推出了Kubernetes系统，同年6月7号在github上完成了第一次提交，随后的7月10号，微软，IBM，Redhat，Docker加入了Kubernetes社区。在2015年7月Kubernetes正式发布了v1.0版本，直到今年6月19号发布了v1.15版本，而且1.16版本正在紧张开发之中。可以看出短短四年已经发布了十六个版本，而且速度越来越快。其实在容器编排领域除了有Kubernetes，还有Docker Swarm和Mesos，在初期，这三者呈三足鼎立之势，但是现在Kubernetes却一枝独秀，Kubernetes已经发展成为一个Kubernetes生态圈，而且以Kubernetes为核心发展起来的的CloudNative的发展势头也很迅猛。
+
+
+# 第三部分： 基于Kubernetes的DevOps 工具链
+
+![](https://github.com/lhb008/DevOps/blob/main/images/tool.png)
