@@ -80,13 +80,11 @@ DevOps一定是要能够度量的，比如部署的频率，故障的修复速�
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/devops-ci-cd.png)
 
-
 ## Blue/Green deployment(蓝绿部署)
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/blue-green.jpg)
 
 > 蓝绿部署和 A/B Testing的区别在于，蓝绿部署的目的是为了能够使产品新版本的发布可控、稳定；而A/B测试则侧重于对于产品的功能测试。
-
 
 ## Canary deployment（灰度发布）
 ![](https://github.com/lhb008/DevOps/blob/main/images/canary.jpg)
@@ -139,6 +137,25 @@ DevOps一定是要能够度量的，比如部署的频率，故障的修复速�
 
 **一个特定领域的软件部署在多台服务器上并做为一个整体对外提供服务，这个整体就称之为集群**。 Kubernetes 集群有 Master 节点和 Node 节点组成。
 
+#### Master 托管
+
+```kubectl get  nodes
+NAME                                               STATUS   ROLES    AGE   VERSION
+ip-172-31-12-242.cn-northwest-1.compute.internal   Ready    <none>   34d   v1.17.9-eks-4c6976
+ip-172-31-30-20.cn-northwest-1.compute.internal    Ready    <none>   34d   v1.17.9-eks-4c6976
+ip-172-31-40-170.cn-northwest-1.compute.internal   Ready    <none>   34d   v1.17.9-eks-4c6976
+```
+
+#### Master 非托管
+
+```$ kubectl get  nodes
+NAME        STATUS   ROLES    AGE    VERSION
+k8stest01   Ready    master   204d   v1.11.0
+k8stest02   Ready    <none>   204d   v1.11.0
+k8stest03   Ready    <none>   204d   v1.11.0
+k8stest04   Ready    <none>   204d   v1.11.0
+```
+
 ### Master 节点
 
 Master 负责管理和维护Kubernetes集群（或者Openshift集群）的状态。
@@ -159,6 +176,28 @@ NAME         READY   STATUS    RESTARTS   AGE
 apple-app    1/1     Running   0          25d
 banana-app   1/1     Running   0          25d
 ```
+
+### Service
+
+将运行在一组pod上的应用程序公开为网络服务的抽象方法。因为 `Pod` 的 `IP` 是经常变化的，为了确保其他服务能够准确发现并连接到`Pod` 所提供服务，需要将链接信息进行固定化。
+
+```
+$ kubectl -n demo get svc
+NAME             TYPE           CLUSTER-IP       EXTERNAL-IP                                                                       PORT(S)          AGE
+apple-service    LoadBalancer   10.100.62.213    a3e5ac0f2186e45dd95d0bc1818d6a6e-940893763.cn-northwest-1.elb.amazonaws.com.cn    9999:30173/TCP   25d
+banana-service   LoadBalancer   10.100.160.152   ae410e74749ba42b091e8d53ce070886-2128295197.cn-northwest-1.elb.amazonaws.com.cn   9999:31580/TCP   25d
+```
+> Serivce 的类型一般有 NodePort，LoadBlancer 和 Ingress 三种。
+
+### Ingress
+
+Kubernetes 中的一种服务暴露方式。
+
+![](https://github.com/lhb008/DevOps/blob/main/images/k8s-svc.png)
+
+### 总结
+
+![](https://github.com/lhb008/DevOps/blob/main/images/Kubernetes-order.png)
 
 # 第三部分： 基于Kubernetes的DevOps 工具链
 
