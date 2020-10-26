@@ -66,14 +66,19 @@ DevOps一定是要能够度量的，比如部署的频率，故障的修复速�
 
 * 持续交付(Continuous Delivery，CD)
 是一组通用的软件工程原则，允许通过使用自动化测试和持续集成频繁的发布软件新版本。持续交付可以认为是持续集成的进一步延伸。
+
 ![](https://github.com/lhb008/DevOps/blob/main/images/devops-cd.jpg)
+
 * 持续部署(Continuous Deployment，CD)
 持续部署又可以认为是持续交付的进一步延伸，指通过定义测试和验证来将风险最小化，从而将变更自动部署到生产环境中。
-![](https://github.com/lhb008/DevOps/blob/main/images/devops-cde.jpg)
+
 
 ## 持续交付和持续部署的区别
 
 持续交付和持续部署看起来都是将变更及时部署到生产环境中，但是他们是有差别的，持续交付通常被认为是持续集成的更进一步，它意味着可以将变更进行部署，而且部署的流程是自动化的，只要点击一个按钮，就能将变更部署到生产环境上。持续部署又是持续交付的更进一步，它意味着变更的部署没有任何的人为干预，全自动部署。另外，Jez Humble在 《持续交付》一书中提到，持续交付可以适用于任何软件开发项目，包括物联网和嵌入式项目，但是持续部署则特定于Web软件。
+
+
+![](https://github.com/lhb008/DevOps/blob/main/images/devops-ci-cd.png)
 
 
 ## Blue/Green deployment(蓝绿部署)
@@ -129,6 +134,18 @@ DevOps一定是要能够度量的，比如部署的频率，故障的修复速�
 ## Kubernetes 架构
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/k8s-arch.png)
+
+### Kubernetes 集群
+
+**一个特定领域的软件部署在多台服务器上并做为一个整体对外提供服务，这个整体就称之为集群**。 Kubernetes 集群有 Master 节点和 Node 节点组成。
+
+### Master 节点
+
+Master 负责管理和维护Kubernetes集群（或者Openshift集群）的状态。
+
+### Node 节点
+
+接受来自于Master的指令，运行和维护运行在Node节点上的相关负载(容器)。
 
 ## 一些常用概念
 
