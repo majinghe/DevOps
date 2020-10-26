@@ -249,6 +249,11 @@ Kubernetes 中的一种服务暴露方式。
 
 > 在 `Openshift` 中，`Router` 是用来完成这一工作的组件，`Router` **组件其实是一个运行在容器内的 `Haproxy`，是一个特殊定制的 `Haproxy`。用户可以创建一种叫做 `Route` 的对象。一个`Route` 会与一个 `Service` 相关联，并且绑定一个域名。当用户通过指定域名访问应用时，域名会被解析并指向 `Router` 所在的计算机节点上。`Router` 获取这个请求，然后根据配置的 `Route` 规则定义转发给与这个域名相对应的 `Service` 后端所关联的 `Pod` 容器实例。**
 
+### Openshift 相关介绍
+
+[云原生学院Openshift信息](https://github.com/cloudnativeto/academy/blob/master/cloud-native-academy/06-%E5%9F%BA%E4%BA%8EOpenShift%E6%9E%84%E5%BB%BAPaaS%E5%92%8CDevOps%E5%B9%B3%E5%8F%B0-%E9%AD%8F%E6%96%B0%E5%AE%87.pdf)
+
+
 ### 总结
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/Kubernetes-order.png)
