@@ -40,7 +40,7 @@ DevOps虽然是Dev和Ops的缩写，但是不仅仅是这两拨人的合作交�
 
 ### 自动化(Automation)
 
-自动化一直伴随着IT行业的发展，它的好处毋庸置疑：尽可能少的进行人为干预，就能防止由于人为误操作引起的系统崩溃，从而使得系统的有效性和鲁棒性大大增强；将产品发布流程自动化，能够提高产品的发布频率，缩短产品的发布周期；还有很重要的一点就是自动化能够节约成本。
+自动 化一直伴随着IT行业的发展，它的好处毋庸置疑：尽可能少的进行人为干预，就能防止由于人为误操作引起的系统崩溃，从而使得系统的有效性和鲁棒性大大增强；将产品发布流程自动化，能够提高产品的发布频率，缩短产品的发布周期；还有很重要的一点就是自动化能够节约成本。
 
 从目前来看，自动化在DevOps中是指：将代码从变更到上生产整个流程进行自动化，也即是我们通常讲的CI/CD。因此以前有人认为DevOps就约等于CI/CD。CI/CD的概念我们后面会介绍。
 
@@ -177,6 +177,58 @@ apple-app    1/1     Running   0          25d
 banana-app   1/1     Running   0          25d
 ```
 
+#### Pod 的创建
+
+`yaml` 文件
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+  namespace: test
+spec:
+  containers:
+  - name: test
+    image: ubuntu:18.04
+    command: ["tail"]
+    args: ["-f","/dev/null"]
+```
+将上述内容写到 `xxx.yaml` 文件中，然后执行如下内容即可创建一个 `Pod`:
+```
+$ kubectl -n your_namespace apply -f xxx.yaml
+```
+整个流程可以查看这个[链接](https://asciinema.org/a/tr60QeEzIyovgByBlMCj0hFzL)
+
+
+### Deployment
+
+`Deployment` 对 `Pod` 和 `ReplicaSets` 进行声明式的更新。(说人话就是 `Deployment` 能够对 `Pod` 进行管理)。
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test
+  labels:
+    app: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - name: test
+        image: ubuntu:18.04
+        command: ["tail"]
+        args: ["-f","/dev/null"]
+```
+`Deployment` 和 `Pods` 之间的区别可以查看这个[链接](https://asciinema.org/a/SN6CqtH5qgzZraPMReE1IpCq5)。
+
 ### Service
 
 将运行在一组pod上的应用程序公开为网络服务的抽象方法。因为 `Pod` 的 `IP` 是经常变化的，为了确保其他服务能够准确发现并连接到`Pod` 所提供服务，需要将链接信息进行固定化。
@@ -194,6 +246,8 @@ banana-service   LoadBalancer   10.100.160.152   ae410e74749ba42b091e8d53ce07088
 Kubernetes 中的一种服务暴露方式。
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/k8s-svc.png)
+
+> 在 `Openshift` 中，`Router` 是用来完成这一工作的组件，`Router` **组件其实是一个运行在容器内的 `Haproxy`，是一个特殊定制的 `Haproxy`。用户可以创建一种叫做 `Route` 的对象。一个`Route` 会与一个 `Service` 相关联，并且绑定一个域名。当用户通过指定域名访问应用时，域名会被解析并指向 `Router` 所在的计算机节点上。`Router` 获取这个请求，然后根据配置的 `Route` 规则定义转发给与这个域名相对应的 `Service` 后端所关联的 `Pod` 容器实例。**
 
 ### 总结
 
