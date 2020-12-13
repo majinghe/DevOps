@@ -80,6 +80,21 @@ COPY main.go /usr/src/app
 
 CMD ["go","run", "main.go"]
 ```
-* Step 3 构建镜像
+* Step 3 构建镜像并推送至镜像仓库
+
+[![Build Docker Image](https://asciinema.org/a/6JPchmyFPnoetUUc7HJnZc7qh.svg)](https://asciinema.org/a/6JPchmyFPnoetUUc7HJnZc7qh)
+
+* 部署应用
+
+使用如下部署应用
+```
+$ docker run --rm -p 9999:9999 dllhb/docker-share:v0.3
+```
+然后可以在浏览器中输入 `localhost:9999` 查看应用。或者用如下的命令行查看结果
+
+```
+$ curl localhost:9999
+Hello DevOpsDay, this is xiaomage
+```
 
 
