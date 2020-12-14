@@ -120,9 +120,13 @@ Hello DevOpsDay, this is xiaomage
 
 Master 负责管理和维护Kubernetes集群的状态。
 
+![](https://github.com/majinghe/DevOps/blob/main/images/kubernetes-master-elements.png)
+
 ### Node 节点
 
 接受来自于Master的指令，运行和维护运行在Node节点上的相关负载(容器)。
+
+![](https://github.com/majinghe/DevOps/blob/main/images/components-worker-node-kubernetes.png)
 
 ## 核心组件
 
@@ -335,6 +339,14 @@ banana-service   LoadBalancer   10.100.160.152   ae410e74749ba42b091e8d53ce07088
 Kubernetes 中的一种服务暴露方式。
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/k8s-svc.png)
+
+## Kubernetes 环境
+
+* Minikube
+
+* Docker Desktop Kubernetes
+
+* kubernetes kind
 
 
 ## 参考资料
