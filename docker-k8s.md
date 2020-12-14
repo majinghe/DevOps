@@ -241,6 +241,28 @@ $ kubectl -n your_namespace apply -f xxx.yaml
 ```
 整个流程可以查看这个[链接](https://asciinema.org/a/tr60QeEzIyovgByBlMCj0hFzL)
 
+#### Pod 的创建流程
+
+![](https://github.com/majinghe/DevOps/blob/main/images/k8s-pod-creation.png)
+
+* 客户端发送`Pod`创建请求（发送至`API server`之前，客户端会有一个验证，确保创建资源的合法性）
+
+* `API server`将`Pod`的信息写入到`etcd`数据库中。写入成功会给`API server`和`etcd`发送确认信息。
+
+* `API server`将`etcd`的状态进行反映。此时所有的`Kubernetes`组件都在监听`API server`的变化。
+
+* `kube-scheduler`通过它自身的监听器探测到`API server`中关于`Pod`创建的信息，然后`kube-scheduler`将分配一个`Node`用来承载这个`Pod`。同时将此信息更新到`API server`。
+
+* `etcd` 将`Node`与`Pod`的信息进行更新。
+
+* `kubelet`感知到了`API server`的关于`Pod`创建的请求，且将`Pod`分配至自己所在的`Node`。
+
+* `kubelet`创建并启动`Pod`，随后向`API server`更新信息。
+
+* `API server`更新`etcd`。
+
+* `etcd`返回确认信息，`API server`告知`kubelet`事件生效。
+
 #### Pod 的设计模式
 
 ##### Init（初始化）容器
