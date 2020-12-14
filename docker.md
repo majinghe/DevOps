@@ -111,7 +111,41 @@ Hello DevOpsDay, this is xiaomage
 
 ## Kubernetes 架构
 
-![](https://github.com/lhb008/DevOps/blob/main/images/k8s-arch.png)
+![](https://github.com/majinghe/DevOps/blob/main/images/k8s-arch.png)
+
+## 核心组件
+
+### 控制面核心组件（Master）
+
+* kube-apiserver
+
+API server 是`Kubernetes`控制面的一个组件，用来暴漏`Kubernetes`的 API。也是所有外部请求的唯一入口。
+
+* etcd
+
+是一个高可用的键值存储数据库，用来存储`kubernetes`集群的所有数据。
+
+* kube-scheduler
+
+控制面的组件之一，用来对 `pod`（`Kubernetes` 最基本的调度单元）进行调度，为其分配合适的`node`。
+
+* kube-controller-manager
+
+控制面的组件之一，用来运行 `controller`逻辑。有多种`controller`，比如常用的`Replication controller`、`Node controller` 等等。
+
+### 数据面核心组件（Node）
+
+* kubelet
+
+运行在每个`Node`上的一个代理，用来确保每个`Pod`中的`Container`运行正常。
+
+* kube-proxy 
+
+运行于集群每个节点上的一个网络代理，主要用来实现`Kubernetes`的`Service`（下面会讲到）。
+
+* Container runtime
+
+用来负责对运行容器进行管理的组件。也是`Kubernetes`编排和管理的重点。目前`Kubernetes`支持多种容器运行时`Docker`、`Containerd`、`CRI-O`等。
 
 ### Kubernetes 集群
 
