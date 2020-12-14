@@ -111,7 +111,17 @@ Hello DevOpsDay, this is xiaomage
 
 ## Kubernetes 架构
 
+`Kubernetes`是一种`Master/Node`架构。
+
 ![](https://github.com/majinghe/DevOps/blob/main/images/k8s-arch.png)
+
+### Master 节点
+
+Master 负责管理和维护Kubernetes集群（或者Openshift集群）的状态。
+
+### Node 节点
+
+接受来自于Master的指令，运行和维护运行在Node节点上的相关负载(容器)。
 
 ## 核心组件
 
@@ -170,15 +180,7 @@ k8stest03   Ready    <none>   204d   v1.11.0
 k8stest04   Ready    <none>   204d   v1.11.0
 ```
 
-### Master 节点
-
-Master 负责管理和维护Kubernetes集群（或者Openshift集群）的状态。
-
-### Node 节点
-
-接受来自于Master的指令，运行和维护运行在Node节点上的相关负载(容器)。
-
-## 一些常用概念
+## 一些核心概念
 
 ### Pod
 
@@ -212,7 +214,6 @@ spec:
 $ kubectl -n your_namespace apply -f xxx.yaml
 ```
 整个流程可以查看这个[链接](https://asciinema.org/a/tr60QeEzIyovgByBlMCj0hFzL)
-
 
 ### Deployment
 
@@ -261,3 +262,9 @@ Kubernetes 中的一种服务暴露方式。
 
 ![](https://github.com/lhb008/DevOps/blob/main/images/k8s-svc.png)
 
+
+## 参考资料
+
+[Docker 官网](https://docs.docker.com/)
+
+[Kubernetes 官网](https://kubernetes.io/docs/)
