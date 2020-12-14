@@ -143,6 +143,8 @@ API server 是`Kubernetes`控制面的一个组件，用来暴漏`Kubernetes`的
 
 控制面的组件之一，用来运行 `controller`逻辑。有多种`controller`，比如常用的`Replication controller`、`Node controller` 等等。
 
+> controller 是一个异步运行的脚本，来确保`Kubernetes`系统的当前状态和我们期望的状态是一致的。
+
 ### 数据面核心组件（Node）
 
 * kubelet
@@ -262,6 +264,7 @@ $ kubectl -n your_namespace apply -f xxx.yaml
 * 希望扩展或增强现有单个容器`Pod`的功能但不想更改现有容器`Pod`功能。
 
 >Init 容器在主容器启动之前会退出；Sidecar 容器却和主容器同生共死。
+
 
 ### Deployment
 
