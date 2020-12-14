@@ -117,7 +117,7 @@ Hello DevOpsDay, this is xiaomage
 
 ### Master 节点
 
-Master 负责管理和维护Kubernetes集群（或者Openshift集群）的状态。
+Master 负责管理和维护Kubernetes集群的状态。
 
 ### Node 节点
 
@@ -186,12 +186,37 @@ k8stest04   Ready    <none>   204d   v1.11.0
 
 Pod 是 Kubernetes 中最基本的调度单元，是一个或者一组容器的一个集合，Pod 内的容器共享网络、存储，且按照规范控制着容器运行。
 
+#### Pod 在 Kubernetes 中的使用方式
+
+* 一个`Pod`中一个`Container`
+
 ```
-$ kubectl -n demo get pods
-NAME         READY   STATUS    RESTARTS   AGE
-apple-app    1/1     Running   0          25d
-banana-app   1/1     Running   0          25d
+$ kubectl -n test get pods
+NAME   READY   STATUS    RESTARTS   AGE
+test   1/1     Running   0          7s
 ```
+
+* 一个`Pod`中多个`Container`（可参考这个[使用场景](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/))
+
+```
+$ kubectl -n test get pods
+NAME   READY   STATUS    RESTARTS   AGE
+test   2/2     Running   0          6s
+
+```
+
+#### Pod 的几种状态
+
+* **Pending**：集群已经接受创建请求并创建了`Pod`，但是`Pod`内的容器还没有运行成功。
+
+* **Running**：`Pod`已经在`Node`上创建成功，且运行成功。**这是大家期望得到的状态**。
+
+* **Succeeded**：`Pod`中的所有容器都成功终止，且不会重启。
+
+* **Failed**：`Pod`中的所有容器都被终止，但至少其中一个容器终止失败。
+
+* **Unknown**：无法确定`Pod`的状态。
+
 
 #### Pod 的创建
 
