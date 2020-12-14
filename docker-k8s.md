@@ -342,3 +342,7 @@ Kubernetes 中的一种服务暴露方式。
 [Docker 官网](https://docs.docker.com/)
 
 [Kubernetes 官网](https://kubernetes.io/docs/)
+
+[Pod 创建流程](https://github.com/jamiehannaford/what-happens-when-k8s)
+
+[Kubernetes 架构](https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams)
