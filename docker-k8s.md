@@ -113,7 +113,8 @@ Hello DevOpsDay, this is xiaomage
 
 `Kubernetes`是一种`Master/Node`架构。
 
-![](https://github.com/majinghe/DevOps/blob/main/images/k8s-arch.png)
+#![](https://github.com/majinghe/DevOps/blob/main/images/k8s-arch.png)
+![](https://github.com/majinghe/DevOps/blob/main/images/full-kubernetes-model-architecture.png)
 
 ### Master 节点
 
