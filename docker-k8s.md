@@ -202,7 +202,6 @@ test   1/1     Running   0          7s
 $ kubectl -n test get pods
 NAME   READY   STATUS    RESTARTS   AGE
 test   2/2     Running   0          6s
-
 ```
 
 #### Pod 的几种状态
@@ -239,6 +238,30 @@ spec:
 $ kubectl -n your_namespace apply -f xxx.yaml
 ```
 整个流程可以查看这个[链接](https://asciinema.org/a/tr60QeEzIyovgByBlMCj0hFzL)
+
+#### Pod 的设计模式
+
+##### Init（初始化）容器
+
+**Init 容器是在容器中启动主容器之前应该运行并完成的容器。**
+
+主要使用场景：
+
+* 应用程序或主容器需要一些先决条件（比如启动之前安装一些软件、完成数据库设置、文件系统的权限修改等）。
+
+* 希望延迟主容器启动。
+
+##### Sidecar（边车）容器
+
+**Sidecar 模式可以在不更改的情况下扩展并增强当前容器的功能。**
+
+主要使用场景：
+
+* 将日志事件发送到外部服务器。
+
+* 希望扩展或增强现有单个容器`Pod`的功能但不想更改现有容器`Pod`功能。
+
+>Init 容器在主容器启动之前会退出；Sidecar 容器却和主容器同生共死。
 
 ### Deployment
 
