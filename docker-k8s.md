@@ -320,7 +320,7 @@ spec:
         command: ["tail"]
         args: ["-f","/dev/null"]
 ```
-`Deployment` 和 `Pods` 之间的区别可以查看这个[链接](https://asciinema.org/a/SN6CqtH5qgzZraPMReE1IpCq5)。
+> 可以理解为你 `ReplicaSet` + `Pod` = `Deployment`。
 
 ### Service
 
