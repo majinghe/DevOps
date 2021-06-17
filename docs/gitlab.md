@@ -20,11 +20,43 @@ DevOps 出现也有十多年了，最近几年呈火爆的发展趋势，我们�
 
 ### CI/CD
 
-CI/CD（continuous integration/continuous deployment(delivery)) 是 **DevOps 落地实践的两大核心关键能力**。甚至有很多企业或者组织认为实现了 CI/CD 就等于落地了 DevOps。可见 CI/CD 的重要性。
+CI/CD（continuous integration/continuous deployment(delivery)) 是 **DevOps 落地实践的两大核心关键能力**。甚至有很多企业或者组织认为实现了 CI/CD 就等于落地了 DevOps。可见 CI/CD 的重要性。GitLab 同样提供了出色的 CI/CD 功能，比如说只需要简单的配置一下 `.gitlab-ci.yml` 文件，就可以体验 CI/CD 功能。如下所示，就是一个输出“Hello World”的配置文件示例。（“Hello World 是程序员认知世界万物的开始）
+```
+job:
+  script:
+    - echo "Hello World, This is GitLab"
+```
+
+> 当然，CI/CD 的使用要从托管项目的实际出发，书写并调试正确的配置文件。
 
 ### 镜像仓库
 
+随着云原生浪潮的席卷，软件的交付模式也从源码交付变成了镜像交付。镜像在云原生应用的部署与管理中占据着重要的位置。GitLab 同样有容器镜像仓库，可以像使用其他镜像仓库一样来使用 GitLab 的容器镜像仓库，比如
 
+```
+$ docker login registry.gitlab.com -u username -p password
+$ docker build -t registry.gitlab.com/username/demo
+$ docker push registry.gitlab.com/username/demo
+
+```
+
+当然，最简单的就是配置在 CI/CD 流水线里面，等镜像构建完毕，自动推送至镜像仓库，代码如下：
+
+```
+docker-build:
+  # Use the official docker image.
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+  rules:
+    - if: $CI_COMMIT_BRANCH
+      exists:
+        - Dockerfile
+```
 ### 安全相关
 
 
