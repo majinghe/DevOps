@@ -87,7 +87,7 @@ docker-build:
 当然，GitLab 还有其他关于安全方面的功能，详细内容可以查看[这儿](https://about.gitlab.com/direction/secure/#security-paradigm)或者[这儿](https://docs.gitlab.com/ee/user/application_security/configuration/)。也敬请期待我们后续文档对此类内容详细的讲解。
 
 
-## 一体化 DevOps 有什么好处
+## 一体化 DevOps 平台的好处
 
 ### 提升开发体验
 
@@ -104,6 +104,8 @@ GitLab 将作为所有操作（代码变更、镜像构建、安全测试等）�
 ### 提高了安全性
 
 当使用多种工具来完成软件开发时，针对每个用户都需要对不同工具做权限管理，尤其当我们选择一些自身并不带权限管理的工具时，权限管理就变成了一个比较头疼的事情。而 GitLab 是一个一体化，它会作为相关人员权限管理（鉴权/授权，Authentication/authorization）的唯一入口，能够对相应人员做到细粒度的权限管理。安全性就得到了一定程度的提高。
+
+当然，使用的好处需要用户亲自体验。
 
 
 ## GitLab 最大不同是什么。
