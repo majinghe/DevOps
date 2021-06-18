@@ -9,6 +9,8 @@
 
 不信？先看看 [CNCF 持续交付技术雷达](https://radar.cncf.io/2020-06-continuous-delivery)。众所周中，持续交付（Continuous Delivery）是 DevOps 实践的核心关键能力，也是各个企业或者组织积极推进 DevOps 落地所追求的目标。从技术雷达看，GitLab 赫然在列，而且在 TRIAL 阶段。足以佐证最开始的阐述：**GitLab 不仅仅是一个代码托管平台，它还是关于 DevOps 的一个平台**，至于是怎样的一个平台，看完下面的内容，相信你会有自己的判断。
 
+> 关于技术雷达的相关内容，大家可以查看 CNCF 官网。
+
 ## GitLab 揭秘
 
 DevOps 出现也有十多年了，最近几年呈火爆的发展趋势，我们可以先不用管 GitLab 有什么，先想想我们如果要推进 DevOps 落地的话，我们会关心哪些问题。
@@ -71,7 +73,13 @@ docker-build:
 
 * **漏洞管理与分析**：针对扫描出来的漏洞能够输出详细的文档，诸如漏洞影响、漏洞修复等步骤，可以帮助用户快速修复漏洞并进行追踪。
 
+## 日志和监控
+
+日志和监控其实是伴随软件开发的整个生命周期的，GitLab 提供的日志和监控系统能够为开发、测试、运维等人员提供关于应用程序的详细情况，方便人们随时掌握应用程序的状况。
+
+
 当然，GitLab 还有其他关于安全方面的功能，详细内容可以查看[这儿](https://about.gitlab.com/direction/secure/#security-paradigm)或者[这儿](https://docs.gitlab.com/ee/user/application_security/configuration/)。也敬请期待我们后续文档对此类内容详细的讲解。
+
 
 ## 一站式 DevOps 有什么好处
 
