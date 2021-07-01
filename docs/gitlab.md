@@ -1,5 +1,6 @@
 # 极狐 GitLab 探秘系列 ｜理论篇之极狐 GitLab 初探
 
+
 ## 极狐 GitLab *VS* GitLab
 
 众所周知，GitLab 是全球领先的一体化 DevOps 平台，但是发源于国外的 GitLab 在赋能国内企业发展方面还是存在诸多限制和不便，为了让众多国内用户能感受极致的 GitLab 体验，在 GitLab 与红杉宽带跨境数字产业基金以及高成资本的大力推动下，极狐 GitLab 成立了。极狐 GitLab 和 GitLab 美国的协作模式如下：
