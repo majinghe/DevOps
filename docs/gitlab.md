@@ -105,12 +105,12 @@ docker-build:
 
 
 
-## GitOps
+### GitOps
 
 云原生是时下非常火热的一个词语，其目的是充分利用云平台的红利，但是云原生应用的管理始终是一个复杂的问题。GitOps 提供了一种云原生应用管理的新模式：以声明式系统（如 Kubernetes）为基座，以 Git（GitLab、GitHub 等）为单一可信源来帮助开发、运维人员方便有效的管理云原生应用。为了更好的推动 GitOps 的发展，极狐 GitLab 联合中国信息通信研究院、云原生计算基金会（CNCF）共同发起了“开源 GitOps 产业联盟”（Open GitOps Industry Alliance，简称 OGA 联盟）。更多关于 OGA 的信息可以查看[新闻速递 | 极狐(GitLab)携手CNCF成立“开源GitOps产业联盟” 推动中国开源生态发展](https://mp.weixin.qq.com/s?__biz=Mzg5OTU3NTgyOA==&mid=2247485899&idx=2&sn=1a9d91c8c8089bddefbe75d7465f7cbe&chksm=c05070b0f727f9a6ffe9260c869ca24fe3782c4f86335c9c0dc2127706607948859d6dd1be54&mpshare=1&scene=1&srcid=0701wi0GJlTgvueXrX5C9E2d&sharer_sharetime=1625108476184&sharer_shareid=69a671b032908bc53da173d06860fd16&exportkey=ASJR06cSHs6%2BRPzCyS2Ei8A%3D&pass_ticket=QsMXW%2BzV0CTlwzjnv5eCAokwyYIMUDVADT4%2BqXJBW%2FGXkzcl5SJaxoxhpinrPE3E&wx_header=0#rd)
 
 
-## 度量
+### 度量
 
 没有度量就没有进步。度量是 DevOps 中非常重要的一环（DevOps 的 CALMS 模型中的 M 就代表度量（Measurement））。极狐 GitLab 提供了四个关键指标来对 DevOps 做出度量，分别是：
 
@@ -121,7 +121,7 @@ docker-build:
 
 当然，除此以外，极狐 GitLab 还有针对系统的总户用、研发项目、流水线、合并请求等的众多内置度量分析。分析的结果均以可视化的方式呈现。
 
-## 日志和监控
+### 日志和监控
 
 日志和监控其实是伴随软件开发的整个生命周期的，GitLab 提供的日志和监控系统能够为开发、测试、运维等人员提供关于应用程序的详细情况，方便人们随时掌握应用程序的状况。
 
