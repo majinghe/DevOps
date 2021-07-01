@@ -97,17 +97,17 @@ docker-build:
 
 * **安全测试**：极狐 GitLab 提供常用的安全测试，诸如 SAST(Static Application Security Testing)、DAST(Dynamic Application Security Testing) 来对源码及应用进行安全测试。通过分析代码找出已知安全漏洞，出具漏洞报告。
 
+* **Web API 模糊测试**：极狐 GitLab 通过向 API 来发送随机的输入来触发例外或者系统崩溃，从而发现系统存在的缺陷或者漏洞。此项功能是基于极狐 GitLab 的自有技术，当然我们推荐和其他扫描手段或工具一起使用来保证应用的安全和质量。
+
 * **依赖分析与扫描**：通过分析依赖关系中的漏洞来对应用程序的安全性进行评估。
 
 * **license 扫描**：企业对于开源的使用率在逐年上升（有数据显示，企业的开源采用率甚至达到 80% 以上）。开源的使用能够加速企业创新，但是使用开源必须要遵从开源合规。基于此，极狐 GitLab 会对项目中包含的相关 license 进行合规扫描，并出具 license 合规报告。
 
 * **漏洞管理与分析**：针对扫描出来的漏洞能够输出详细的文档，诸如漏洞影响、漏洞修复等步骤，可以帮助用户快速修复漏洞并进行追踪。
 
-
-
 ### GitOps
 
-云原生是时下非常火热的一个词语，其目的是充分利用云平台的红利，但是云原生应用的管理始终是一个复杂的问题。GitOps 提供了一种云原生应用管理的新模式：以声明式系统（如 Kubernetes）为基座，以 Git（GitLab、GitHub 等）为单一可信源来帮助开发、运维人员方便有效的管理云原生应用。为了更好的推动 GitOps 的发展，极狐 GitLab 联合中国信息通信研究院、云原生计算基金会（CNCF）共同发起了“开源 GitOps 产业联盟”（Open GitOps Industry Alliance，简称 OGA 联盟）。更多关于 OGA 的信息可以查看[新闻速递 | 极狐(GitLab)携手CNCF成立“开源GitOps产业联盟” 推动中国开源生态发展](https://mp.weixin.qq.com/s?__biz=Mzg5OTU3NTgyOA==&mid=2247485899&idx=2&sn=1a9d91c8c8089bddefbe75d7465f7cbe&chksm=c05070b0f727f9a6ffe9260c869ca24fe3782c4f86335c9c0dc2127706607948859d6dd1be54&mpshare=1&scene=1&srcid=0701wi0GJlTgvueXrX5C9E2d&sharer_sharetime=1625108476184&sharer_shareid=69a671b032908bc53da173d06860fd16&exportkey=ASJR06cSHs6%2BRPzCyS2Ei8A%3D&pass_ticket=QsMXW%2BzV0CTlwzjnv5eCAokwyYIMUDVADT4%2BqXJBW%2FGXkzcl5SJaxoxhpinrPE3E&wx_header=0#rd)
+云原生是时下非常火热的一个词语，其目的是充分利用云平台的红利，但是云原生应用的管理始终是一个复杂的问题。GitOps 提供了一种云原生应用管理的新模式：**以声明式系统（如 Kubernetes）为基座，以 Git（GitLab、GitHub 等）为单一可信源**来帮助开发、运维人员方便有效的管理云原生应用。为了更好的推动 GitOps 的发展，极狐 GitLab 联合中国信息通信研究院、云原生计算基金会（CNCF）共同发起了“开源 GitOps 产业联盟”（Open GitOps Industry Alliance，简称 OGA 联盟）。更多关于 OGA 的信息可以查看[新闻速递 | 极狐(GitLab)携手CNCF成立“开源GitOps产业联盟” 推动中国开源生态发展](https://mp.weixin.qq.com/s?__biz=Mzg5OTU3NTgyOA==&mid=2247485899&idx=2&sn=1a9d91c8c8089bddefbe75d7465f7cbe&chksm=c05070b0f727f9a6ffe9260c869ca24fe3782c4f86335c9c0dc2127706607948859d6dd1be54&mpshare=1&scene=1&srcid=0701wi0GJlTgvueXrX5C9E2d&sharer_sharetime=1625108476184&sharer_shareid=69a671b032908bc53da173d06860fd16&exportkey=ASJR06cSHs6%2BRPzCyS2Ei8A%3D&pass_ticket=QsMXW%2BzV0CTlwzjnv5eCAokwyYIMUDVADT4%2BqXJBW%2FGXkzcl5SJaxoxhpinrPE3E&wx_header=0#rd)
 
 
 ### 度量
