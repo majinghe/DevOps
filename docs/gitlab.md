@@ -35,7 +35,7 @@ DevOps 出现也有十多年了，最近几年呈火爆的发展趋势，我们�
 代码毫无疑问是我们最看重的，也是我们 IT“打工人”在经历 996/007 福报之后的智慧结晶。代码托管也是 GitLab 最基本的功能之一，分支管理（branch）、代码审查（review）、代码合并（merge）等都是一应俱全。熟悉 Git 操作的小伙伴可以很快上手 GitLab。 
 
 
-### CI/CD
+### CI/CD(极狐 GitLab Runner）
 
 CI/CD（continuous integration/continuous deployment(delivery)) 是 **DevOps 落地实践的两大核心关键能力**。甚至有很多企业或者组织认为实现了 CI/CD 就等于落地了 DevOps。可见 CI/CD 的重要性。GitLab 同样提供了出色的 CI/CD 功能，比如说只需要简单的配置一下 `.gitlab-ci.yml` 文件，就可以体验 CI/CD 功能。如下所示，就是一个输出“Hello World”的配置文件示例。（“Hello World 是程序员认知世界万物的开始）
 ```
@@ -45,6 +45,9 @@ job:
 ```
 
 > 当然，CI/CD 的使用要从托管项目的实际出发，书写并调试正确的配置文件。
+
+极狐 GitLab Runner 是极狐 GitLab 实现 CI/CD 的基石。极狐 GitLab Runner 能够让开发者针对不同分支进行相应的 CI/CD 流水线设计，而且整个构建过程的产物、结果都是可视化的，同时具有原生支持容器（Docker）、多语言支持、Runner 自动伸缩、多系统（Linux、Mac、Windows、FreeBSD）支持等特点。当然，如果用户不想用 GitLab 自身提供的 Runner，还可以自定义 Runner（将自己的服务器配置为 Runner 可运行的环境，再将 Runner 和极狐 GitLab 相连接），这样就省去了由于构建过多而需要等待的烦恼。
+
 
 ### 镜像仓库
 
@@ -97,7 +100,7 @@ docker-build:
 
 ## GitOps
 
-云原生是时下非常火热的一个词语，其目的是充分利用云平台的红利，但是云原生应用的管理始终是一个复杂的问题。GitOps 提供了一种云原生应用管理的新模式：以声明式系统（如 Kubernetes）为基座，以 Git（GitLab、GitHub 等）为单一可信源来帮助开发、运维人员方便有效的管理云原生应用。为了更好的推动 GitOps 的发展，极狐 GitLab 联合中国信息通信研究院、云原生计算基金会（CNCF）
+云原生是时下非常火热的一个词语，其目的是充分利用云平台的红利，但是云原生应用的管理始终是一个复杂的问题。GitOps 提供了一种云原生应用管理的新模式：以声明式系统（如 Kubernetes）为基座，以 Git（GitLab、GitHub 等）为单一可信源来帮助开发、运维人员方便有效的管理云原生应用。为了更好的推动 GitOps 的发展，极狐 GitLab 联合中国信息通信研究院、云原生计算基金会（CNCF）共同发起了“开源 GitOps 产业联盟”（Open GitOps Industry Alliance，简称 OGA 联盟）。更多关于 OGA 的信息可以查看[新闻速递 | 极狐(GitLab)携手CNCF成立“开源GitOps产业联盟” 推动中国开源生态发展](https://mp.weixin.qq.com/s?__biz=Mzg5OTU3NTgyOA==&mid=2247485899&idx=2&sn=1a9d91c8c8089bddefbe75d7465f7cbe&chksm=c05070b0f727f9a6ffe9260c869ca24fe3782c4f86335c9c0dc2127706607948859d6dd1be54&mpshare=1&scene=1&srcid=0701wi0GJlTgvueXrX5C9E2d&sharer_sharetime=1625108476184&sharer_shareid=69a671b032908bc53da173d06860fd16&exportkey=ASJR06cSHs6%2BRPzCyS2Ei8A%3D&pass_ticket=QsMXW%2BzV0CTlwzjnv5eCAokwyYIMUDVADT4%2BqXJBW%2FGXkzcl5SJaxoxhpinrPE3E&wx_header=0#rd)
 
 ## 日志和监控
 
