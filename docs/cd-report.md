@@ -80,3 +80,5 @@
 
 在部署频率这一项上，只有十分之一的开发者属于精英层，也即他们每天可以有多个部署。
 
+![deployment frequency](https://github.com/majinghe/DevOps/blob/main/images/deployment-frequency.png)
+
