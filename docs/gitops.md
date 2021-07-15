@@ -8,19 +8,19 @@
 
 诚然，“造词运动”产生的概念让人们目不暇接，每一个点都意味着有新东西出来，让本来就不够用的脑容量更加捉襟见肘，唯有“躺平”以应对。但是，就算“躺平”也要积极的“躺平”，学习完 GitOps 之后躺下慢慢平复 GitOps 带来的激动心情。
 
-GitOps 的出现与云计算的大力推进有关，准确点，大胆点说与**云原生**有关。
+GitOps 这个词出现于 2017 年，是由 weaveworks 公司根据多年云计算基础设施和应用程序管理经验而提出的一个概念。可以看出 GitOps 是非常年轻的，它的出现与云计算的大力推进有关，也可以说大胆、准确点说与**云原生**有关。
 
 ### 大名鼎鼎的云原生（Cloud Native）
 
 现如今，没听过云原生都不好意思跟别人交流，不知道云原生都没法跟别人说组织在上云。云原生概念的提出在 2013 年，经过了这几年的演进，成立了发展势头火爆的 CNCF（Cloud Native Computing Foundation）基金会，也对与云原生的定义，有了一个大家都接受的定义：
 
-云原生技术使企业能够在现代动态环境中构建和运行可扩展的应用程序，如公共云、私有云和混合云。**容器、服务网格、微服务、不可变的基础设施和声明式 API** 是云原生的典型技术。
+云原生技术使企业能够在现代动态环境中构建和运行可扩展的应用程序，如公有云、私有云和混合云。**容器、服务网格、微服务、不可变的基础设施和声明式 API** 是云原生的典型技术。
 
 > Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
 
 关于云原生的更多内容，在这儿不多赘述，大家可以查看 [CNCF 官网](https://www.cncf.io)。云原生应用程序的部署是我们重点讨论的，因为它与 GitOps 密切相关。
 
-### 云原生应用的持续交付
+### 云原生系统（基础设施和应用程序）管理之痛
 
 一般情况下可以使用下面的持续交付系统（示意图）来完成云原生应用程序的部署与交付
 
@@ -48,10 +48,12 @@ GitOps 的出现与云计算的大力推进有关，准确点，大胆点说与*
 
 前面铺垫了这么多，GitOps 终于出现了，关于 GitOps 有这么几个特性：
 
-* 以声明式系统为基座（典型如 kubernetes）
+* 以声明式系统（包括基础设施和应用程序）为基座（典型如 kubernetes）
 * 以 Git（典型如极狐 GitLab）为单一可信源
+* 一切皆代码（应用程序 & 基础设施）
 
 使用 GitOps，上述的“push”模型就变为了下面的“pull”模型：
 
-
 ![gitlab-gitops-pull](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-gitops-pull.png)
+
+### GitOps 之三叉戟
