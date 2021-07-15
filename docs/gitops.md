@@ -24,7 +24,7 @@ GitOps 的出现与云计算的大力推进有关，准确点，大胆点说与*
 
 一般情况下可以使用下面的持续交付系统（示意图）来完成云原生应用程序的部署与交付
 
-![gitlab-git-push](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-git-push.png)
+![gitlab-git-push](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-gitops-push.png)
 
 上述模式属于“push”模式，我称之为“一杆子到底梭哈型”（流程从左到右走到底），这是一种很常用的模式，很容易实现一键式部署。但是也存在一些问题：
 
@@ -54,4 +54,4 @@ GitOps 的出现与云计算的大力推进有关，准确点，大胆点说与*
 使用 GitOps，上述的“push”模型就变为了下面的“pull”模型：
 
 
-![gitlab-git-pull](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-git-pull.png)
+![gitlab-git-pull](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-gitops-pull.png)
