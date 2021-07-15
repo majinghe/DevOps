@@ -19,3 +19,9 @@ GitOps 的出现与云计算的大力推进有关，准确点，大胆点说与*
 > Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
 
 关于云原生的更多内容，在这儿不多赘述，大家可以查看 [CNCF 官网](https://www.cncf.io)。云原生应用程序的部署是我们重点讨论的，因为它与 GitOps 密切相关。
+
+### 云原生应用的持续交付
+
+一般情况下可以使用下面的持续交付系统（示意图）来完成云原生应用程序的部署与交付
+
+![gitlab-git-pull](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-git-pull.png)
