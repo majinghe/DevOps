@@ -24,7 +24,7 @@ GitOps 的出现与云计算的大力推进有关，准确点，大胆点说与*
 
 一般情况下可以使用下面的持续交付系统（示意图）来完成云原生应用程序的部署与交付
 
-![gitlab-git-pull](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-git-pull.png)
+![gitlab-git-push](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-git-push.png)
 
 上述模式属于“push”模式，我称之为“一杆子到底梭哈型”（流程从左到右走到底），这是一种很常用的模式，很容易实现一键式部署。但是也存在一些问题：
 
@@ -43,3 +43,15 @@ GitOps 的出现与云计算的大力推进有关，准确点，大胆点说与*
 声明式系统有个特点：能够帮我们自动完成应用程序（或基础设施系统）的描述状态和实际状态的自动同步，保证两者能保持一致。比如，应用部署清单里面应用程序是一个副本（replicas=1），那么集群侧应用程序就会是一个 pod。借助于这个特点，上述“push”模型的问题可以做如下解答：
 
 既然声明式系统可以用文件清单来描述（典型如 yaml 文件），那么既然是文件就可以存储到极狐 GitLab 上（发挥了版本控制系统的功能）。开发人员或者运维人员想修改某些内容（应用程序属性、基础设施配置）的时候，只需要修改文件清单即可（修改完毕提 PR，方便 review），此时这个变更就会被自动同步至集群侧。所以现在只需要找一个方法能够自动实现这种变更监听和变更自动同步即可，而这正式今天的主角 GitOps 要做的事情。
+
+### 呼之欲出的 GitOps
+
+前面铺垫了这么多，GitOps 终于出现了，关于 GitOps 有这么几个特性：
+
+* 以声明式系统为基座（典型如 kubernetes）
+* 以 Git（典型如极狐 GitLab）为单一可信源
+
+使用 GitOps，上述的“push”模型就变为了下面的“pull”模型：
+
+
+![gitlab-git-pull](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-git-pull.png)
