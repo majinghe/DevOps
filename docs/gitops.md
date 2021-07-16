@@ -57,3 +57,23 @@ GitOps 这个词出现于 2017 年，是由 weaveworks 公司根据多年云计�
 ![gitlab-gitops-pull](https://github.com/majinghe/DevOps/blob/main/images/gitops/gitlab-gitops-pull.png)
 
 ### GitOps 之三叉戟
+
+GitOps 的实践需要基础设施即代码（Infrastructure as Code，简称 IaC）、Pull Request（PRs）、CI/CD 三叉戟的组合拳。
+
+#### 基础设施即代码（IaC）
+
+基础设施即代码是一种基于使用软件开发实践来进行基础设施自动化管理的方法。它强调通过一致的、可重复的程序来对基础设施系统进行修改。当需要对基础设施进行修改时，只需要修改于基础设施相关的代码即可，随后会有自动化来测试这些变更并最终将这些变更应用到基础设施系统中。
+
+GitOps 的重要特性之一就是：**一切皆代码**。以 Git 为单一可信源，所有与软件开发相关流程中的代码（包括基础设施代码、应用程序源码、配置等）都会存储在 Git 仓库中。
+
+极狐 GitLab 很好的与基础设施即代码中的瑞士军刀——Terraform 做了集成，可以方便的完成云基础设施的自动化管理。详细内容和演示示例，可以查看公众号[如何借助极狐GitLab 和Terraform以代码形式构建基础设施？](https://mp.weixin.qq.com/s?__biz=Mzg5OTU3NTgyOA==&mid=2247486125&idx=2&sn=f249d96a08ba32f34f4663b3b1d9407b&chksm=c05073d6f727fac06e65349d80e73b2370c70f157cd81d19fd4f98374d1d5010dd7fa5e9fc09&mpshare=1&scene=1&srcid=0716BqeAIbnTUagNw97gp2my&sharer_sharetime=1626400478390&sharer_shareid=69a671b032908bc53da173d06860fd16&exportkey=AYaaLtwEtx9utJDAYuhe5D4%3D&pass_ticket=%2FzxWDvZPZDMJeMGsfqc4XNbLSShfgZr5OQ0iVACuyoOW4k46rKmz535cknw9gWrM&wx_header=0#rd)。
+
+### Pull Request（PRs）
+
+当开发或者运维想要对系统（基础设施或者应用程序）做出某些变更时，需要提一个 Pull Request，这是一种让多人、多团队进行协作的方式，能更好的对变更进行评审（Review），提前评估变更的必要性、准确性、安全性等，从而降低变更给系统带来的风险。对系统所有的变更发起点都是代码变更，这样就使安全审计变得简单，因为一切皆代码，所见即所得，评审、审批都在仓库系统中，对于所有人员都是透明可见的，透明度也会增强团队成员之间的信任度和协作性。
+
+### CI/CD
+
+当 PR 创建审核完毕，后续的变更需要 CI/CD 自动化的流程去完成系统的变更。自动化的流程减少了人为的手动干预，减少了人员误操作所带来的风险，同时能够节省时间，在大规模使用场景中，是非常重要的一环。
+
+
