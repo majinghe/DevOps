@@ -120,6 +120,10 @@ GitLab 提供了一个用户体验良好的协作平台，但是使用平台的�
 
 ###  GitSecOps 与 OGA
 
-安全是一个重要的话题，在企业加速上云的浪潮中，安全被越来越过的企业和组织所关心。GitOps 能带来酸爽的体验，但是安全是其必须重视并实践的一环，只有重视、融入安全的 GitOps 才是真正的 GitOps，也即 GitSecOps。
+GitOps 只是初始形态，它一定是发展演进的，这发展的方向就是**安全+标准**。
 
-为了更好的推动 GitOps 的发展以及向 GitSecOps 的最终转变，5月26日，在中国信息通信研究院（简称：中国信通院）主办的云原生产业大会上，在云计算开源产业联盟（OSCAR）的指导下，极狐信息技术(湖北)有限公司（简称：极狐(GitLab)）与云原生计算基金会 (CNCF) 联合发起并成立 “开源GitOps产业联盟” (Open GitOps Industry Alliance，简称：OGA联盟）。同时，为支持开源GitOps技术的社区推广、产业落地、技术孵化，打造开源开放的GitOps产业生态，中国信通院、CNCF和极狐(GitLab)三方依托OGA联盟，共同成立OGA产业发展社区（简称：OGA社区）。关于 OGA 更多的内容，可以查看[新闻速递 | 极狐(GitLab)携手CNCF成立“开源GitOps产业联盟” 推动中国开源生态发展](https://mp.weixin.qq.com/s?__biz=Mzg5OTU3NTgyOA==&mid=2247485899&idx=2&sn=1a9d91c8c8089bddefbe75d7465f7cbe&chksm=c05070b0f727f9a6ffe9260c869ca24fe3782c4f86335c9c0dc2127706607948859d6dd1be54&mpshare=1&scene=1&srcid=07165Xvv4r8um48mvdjmH6Rw&sharer_sharetime=1626405481822&sharer_shareid=69a671b032908bc53da173d06860fd16&exportkey=ATlqdBiVeCxFWjF2klpGMq0%3D&pass_ticket=%2FzxWDvZPZDMJeMGsfqc4XNbLSShfgZr5OQ0iVACuyoOW4k46rKmz535cknw9gWrM&wx_header=0#rd)
+安全是一个重要的话题，在企业加速上云的浪潮中，安全已经被越来越过的企业和组织所关心。GitOps 是能带来酸爽的体验，但是安全是其必须重视并实践的一环，只有重视、融入安全的 GitOps 才是真正的 GitOps，也即 GitSecOps。
+
+为了推动 GitSecOps 更好的发展，2021 年 5月 26 日，在中国信息通信研究院（简称：中国信通院）主办的云原生产业大会上，在云计算开源产业联盟（OSCAR）的指导下，极狐信息技术(湖北)有限公司（简称：极狐(GitLab)）与云原生计算基金会 (CNCF) 联合发起并成立 “开源GitOps产业联盟” (Open GitOps Industry Alliance，简称：OGA联盟）。同时，为支持开源GitOps技术的社区推广、产业落地、技术孵化，打造开源开放的GitOps产业生态，中国信通院、CNCF和极狐(GitLab)三方依托OGA联盟，共同成立OGA产业发展社区（简称：OGA社区）。
+
+OGA 会围绕技术标准制定、开发者和社区生态搭建、数字人才培养、开源产、学、研推进等方面展开相应的工作，极狐 GitLab 诚挚的邀请各相关单位能够加入 OGA，以开源的方式共同推进 OGA 的发展。关于 OGA 更多的内容，可以查看[新闻速递 | 极狐(GitLab)携手CNCF成立“开源GitOps产业联盟” 推动中国开源生态发展](https://mp.weixin.qq.com/s?__biz=Mzg5OTU3NTgyOA==&mid=2247485899&idx=2&sn=1a9d91c8c8089bddefbe75d7465f7cbe&chksm=c05070b0f727f9a6ffe9260c869ca24fe3782c4f86335c9c0dc2127706607948859d6dd1be54&mpshare=1&scene=1&srcid=07165Xvv4r8um48mvdjmH6Rw&sharer_sharetime=1626405481822&sharer_shareid=69a671b032908bc53da173d06860fd16&exportkey=ATlqdBiVeCxFWjF2klpGMq0%3D&pass_ticket=%2FzxWDvZPZDMJeMGsfqc4XNbLSShfgZr5OQ0iVACuyoOW4k46rKmz535cknw9gWrM&wx_header=0#rd)
